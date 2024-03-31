@@ -1,8 +1,16 @@
+import 'package:baraeim/screens/alarm1.dart';
 import 'package:baraeim/screens/daily_exercise.dart';
+import 'package:baraeim/screens/home_for_artical.dart';
+import 'package:baraeim/screens/modern_parenting.dart';
 import 'package:baraeim/screens/vaccinations.dart';
+import 'package:baraeim/utils/fcm.dart';
 import 'package:flutter/material.dart';
+import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
+import 'package:intl/intl.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await NotificationService.initializeNotification();
   runApp(const MyApp());
 }
 
@@ -35,7 +43,7 @@ class MyApp extends StatelessWidget {
 
         useMaterial3: true,
       ),
-      home: const DailyExercise (),
+      home:  const Alarm1(),
     );
   }
 }

@@ -1,4 +1,6 @@
+import 'package:baraeim/models/item_vaccinations.dart';
 import 'package:baraeim/screens/tips.dart';
+import 'package:baraeim/widget/vaccinations_catogery.dart';
 import 'package:flutter/material.dart';
 
 class Vaccinations extends StatefulWidget {
@@ -10,6 +12,35 @@ class Vaccinations extends StatefulWidget {
 
 class _VaccinationsState extends State<Vaccinations> {
   bool isDone=false;
+  final List<ItemVaccinations> itemVaccinations =[
+    ItemVaccinations(titel: 'BCG (Bacillus Calmette Guerin) vaccine', date: '04-Jan-2024'),
+    ItemVaccinations(titel: 'Hepatitis B (HepB)', date: '04-Jan-2024'),
+    ItemVaccinations(titel: 'Hexavalent vaccine (6-in-1 vaccine)', date: '04-Mar-2024'),
+    ItemVaccinations(titel: """Pneumococcal conjugate vaccine
+ (PCV) -1st Dose""", date: '04-Mar-2024'),
+    ItemVaccinations(titel: 'Rotavirus vaccine (Rvv)- 1st Dose', date: '04-Mar-2024'),
+    ItemVaccinations(titel: """Hexavalent vaccine (6-in-1 vaccine)- 2nd
+Dose""", date: '04-May-2024'),
+    ItemVaccinations(titel: """Pneumococcal conjugate vaccine
+ (PCV) -2nd Dose""", date: '04-May-2024'),
+    ItemVaccinations(titel: 'Rotavirus vaccine (Rvv)- 2nd Dose', date: '04-May-2024'),
+    ItemVaccinations(titel: """Hexavalent vaccine (6-in-1 vaccine)- 3rd
+Dose""", date: '04-Jul-2024'),
+    ItemVaccinations(titel: """Pneumococcal conjugate vaccine
+ (PCV) -3rd Dose""", date: '04-Jul-2024'),
+    ItemVaccinations(titel: 'Rotavirus vaccine (Rvv)- 3rd Dose', date: '04-Jul-2024'),
+    ItemVaccinations(titel: "MMR vaccine (measles, Mumps, and rubella)", date: '04-Jan-2024'),
+    ItemVaccinations(titel: 'Varicella', date: '04-Jan-2024'),
+    ItemVaccinations(titel: """Pneumococcal conjugate vaccine
+ (PCV)- 4th Dose""", date: '04-Jan-2024'),
+    ItemVaccinations(titel: """DTap (Diphtheria, tetanus, &acellular
+pertussis)""", date: '04-Jan-2024'),
+    ItemVaccinations(titel:"""DTap (Diphtheria, tetanus, &acellular
+pertussis)-2nd Dose""", date: '04-Jan-2024'),
+    ItemVaccinations(titel: """MMR vaccine (measles, Mumps, and
+ rubella)-2nd""", date: '04-Jan-2024'),
+    ItemVaccinations(titel: 'Varicella-2nd Dose', date: '04-Jan-2024'),
+  ];
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -29,289 +60,270 @@ class _VaccinationsState extends State<Vaccinations> {
         ),
 
       ),
-      body: ListView(
-        children: [
-        Stack(
-            children:[
-          Image.asset("assets/vaccinations.png"),
-          Positioned(
-            top: 32,
-            left: 32,
-            child: ElevatedButton(
+      body: SingleChildScrollView(
 
-              style: ElevatedButton.styleFrom(
-                primary: Color(0xFFFFFFFF),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8.0),
-              ),),
-              onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const Tips()));
+        child: Column(
+          children: [
+            Stack(
+                children:[
+              Image.asset("assets/vaccinations.png"),
+              Positioned(
+                top: 32,
+                left: 32,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                  backgroundColor:const Color(0xFFFFFFFF),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12.0),
+                  ),),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const Tips()));
 
-              },
-              child: Text('Tips',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w500,color: Color(0xFFE17BB4)),),
+                  },
+                  child: const Text('Tips',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w500,color: Color(0xFFE17BB4)),),
+                ),
+              ),
+
+
+            ]
+            ) ,
+            const SizedBox(height: 20),
+            Padding(
+              padding: const EdgeInsets.only(left:24,right: 24),
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      Image.asset(
+                        width: 20,
+                          "assets/Line 1.png"),
+                      const SizedBox(width: 8,),
+                      const Text('At Birth',style: TextStyle(fontSize: 12,fontWeight:FontWeight.w400 ),),
+                      const SizedBox(height: 8,),
+
+                    ],
+                  ),
+                ],
+              ),
             ),
-          ),
+            SizedBox(height: 8,),
+            Padding(
+              padding: const EdgeInsets.only(left:24,right: 24),
+              child: ListView.builder(
+                shrinkWrap: true,
+                physics:NeverScrollableScrollPhysics(),
+                itemCount: 2,itemBuilder: (BuildContext context, int index){
+                return VaccinationsCatogery(itemVaccinations: itemVaccinations[index+0],
 
-
-        ]
-        ) ,
-        SizedBox(height: 20),
-        Padding(
-          padding: const EdgeInsets.only(left:24,right: 24),
-          child: Column(
-            children: [
-              Row(
+                );
+              },),
+            ),
+            SizedBox(height: 24,),
+            Padding(
+              padding: const EdgeInsets.only(left:24,right: 24),
+              child: Column(
                 children: [
-                  Image.asset(
-                    width: 20,
-                      "assets/Line 1.png"),
-                  SizedBox(width: 8,),
-                  Text('At Birth',style: TextStyle(fontSize: 12,fontWeight:FontWeight.w400 ),),
-                  SizedBox(height: 8,),
+                  Row(
+                    children: [
+                      Image.asset(
+                          width: 20,
+                          "assets/Line 1.png"),
+                      const SizedBox(width: 8,),
+                      const Text(' Month 2',style: TextStyle(fontSize: 12,fontWeight:FontWeight.w400 ),),
+                      const SizedBox(height: 8,),
+
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 8,),
+            Padding(
+              padding: const EdgeInsets.only(left:24,right: 24),
+              child: ListView.builder(
+                shrinkWrap: true,
+                physics:NeverScrollableScrollPhysics(),
+                itemCount: 3,itemBuilder: (BuildContext context, int index){
+                return VaccinationsCatogery(itemVaccinations: itemVaccinations[index+2],
+
+                );
+              },),
+            ),
+            SizedBox(height: 24,),
+            Padding(
+              padding: const EdgeInsets.only(left:24,right: 24),
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      Image.asset(
+                          width: 20,
+                          "assets/Line 1.png"),
+                      const SizedBox(width: 8,),
+                      const Text(' Month 4',style: TextStyle(fontSize: 12,fontWeight:FontWeight.w400 ),),
+
+
+                    ],
+
+                  ),
+                  const SizedBox(height: 8,),
+                  ListView.builder(
+                    shrinkWrap: true,
+                    physics:NeverScrollableScrollPhysics(),
+                    itemCount: 3,itemBuilder: (BuildContext context, int index){
+                    return VaccinationsCatogery(itemVaccinations: itemVaccinations[index+5],
+
+                    );
+                  },),
+
+
 
                 ],
               ),
-
-              Container(height: 65,
-                width:380 ,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                    border: Border.all(
-                  color: Color(0xFF8C8A8A), // Border color
-                            // Border width
-                ),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.only(left:12,top: 12),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('BCG (Bacillus Calmette Guerin) vaccine',style: TextStyle(fontSize: 12,fontWeight: FontWeight.w400),),
-                      Row(
-                        children: [
-                          Text('04-Jan-2024',style: TextStyle(fontSize: 10,fontWeight: FontWeight.w500,color: Color(0xFF8C8A8A)),),
-                          SizedBox(width: 149,),
-                          InkWell(
-                            onTap: (){
-                              setState(() {
-                                isDone=!isDone;
-                              });
-                            },
-                            child: Container(
-                              width: 64,
-                              height: 29,
-                              decoration: BoxDecoration(
-                                  color: isDone ? Color(0xFFE3FFDA) : Color(0xFF78D956),
-                                  borderRadius: BorderRadius.circular(8)),
-                              alignment: Alignment.center,
-                              child: Text('Done',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w500,  color: isDone ? Color(0xFFA3E58B) : Color(0xFFE3FFDA),),),
-                            ),
-                          )
-
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(height: 8,),
-              Container(height: 65,
-                width:380 ,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                    border: Border.all(
-                  color: Color(0xFF8C8A8A), // Border color
-                            // Border width
-                ),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.only(left:12,top: 12),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('Hepatitis B (HepB)',style: TextStyle(fontSize: 12,fontWeight: FontWeight.w400),),
-                      Row(
-                        children: [
-                          Text('04-Jan-2024',style: TextStyle(fontSize: 10,fontWeight: FontWeight.w500,color: Color(0xFF8C8A8A)),),
-                          SizedBox(width: 149,),
-                          InkWell(
-                            onTap: (){
-                              setState(() {
-                                isDone=!isDone;
-                              });
-                            },
-                            child: Container(
-                              width: 64,
-                              height: 29,
-                              decoration: BoxDecoration(
-                                  color: isDone ? Color(0xFFE3FFDA) : Color(0xFF78D956),
-                                  borderRadius: BorderRadius.circular(8)),
-                              alignment: Alignment.center,
-                              child: Text('Done',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w500,  color: isDone ? Color(0xFFA3E58B) : Color(0xFFE3FFDA),),),
-                            ),
-                          )
-
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(height: 24,),
-              Row(
+            ),
+            SizedBox(height: 24,),
+            Padding(
+              padding: const EdgeInsets.only(left:24,right: 24),
+              child: Column(
                 children: [
-                  Image.asset(
-                      width: 20,
-                      "assets/Line 1.png"),
-                  SizedBox(width: 8,),
-                  Text('Month 2',style: TextStyle(fontSize: 12,fontWeight:FontWeight.w400, ),),
-                  SizedBox(height: 8,),
+                  Row(
+                    children: [
+                      Image.asset(
+                          width: 20,
+                          "assets/Line 1.png"),
+                      const SizedBox(width: 8,),
+                      const Text(' Month 6',style: TextStyle(fontSize: 12,fontWeight:FontWeight.w400 ),),
+
+
+                    ],
+
+                  ),
+                  const SizedBox(height: 8,),
+                  ListView.builder(
+                    shrinkWrap: true,
+                    physics:NeverScrollableScrollPhysics(),
+                    itemCount: 3,itemBuilder: (BuildContext context, int index){
+                    return VaccinationsCatogery(itemVaccinations: itemVaccinations[index+8],
+
+                    );
+                  },),
+
+
+
 
                 ],
               ),
-              SizedBox(height: 8,),
-              Container(height: 65,
-                width:380 ,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  border: Border.all(
-                    color: Color(0xFF8C8A8A), // Border color
-                    // Border width
-                  ),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.only(left:12,top: 12),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+            ),
+            SizedBox(height: 24,),
+            Padding(
+              padding: const EdgeInsets.only(left:24,right: 24),
+              child: Column(
+                children: [
+                  Row(
                     children: [
-                      Text('BCG (Bacillus Calmette Guerin) vaccine',style: TextStyle(fontSize: 12,fontWeight: FontWeight.w400),),
-                      Row(
-                        children: [
-                          Text('04-Jan-2024',style: TextStyle(fontSize: 10,fontWeight: FontWeight.w500,color: Color(0xFF8C8A8A)),),
-                          SizedBox(width: 149,),
-                          InkWell(
-                            onTap: (){
-                              setState(() {
-                                isDone=!isDone;
-                              });
-                            },
-                            child: Container(
-                              width: 64,
-                              height: 29,
-                              decoration: BoxDecoration(
-                                  color: isDone ? Color(0xFFE3FFDA) : Color(0xFF78D956),
-                                  borderRadius: BorderRadius.circular(8)),
-                              alignment: Alignment.center,
-                              child: Text('Done',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w500,  color: isDone ? Color(0xFFA3E58B) : Color(0xFFE3FFDA),),),
-                            ),
-                          )
+                      Image.asset(
+                          width: 20,
+                          "assets/Line 1.png"),
+                      const SizedBox(width: 8,),
+                      const Text(' Month 12',style: TextStyle(fontSize: 12,fontWeight:FontWeight.w400 ),),
 
-                        ],
-                      ),
+
                     ],
+
                   ),
-                ),
+                  const SizedBox(height: 8,),
+                  ListView.builder(
+                    shrinkWrap: true,
+                    physics:NeverScrollableScrollPhysics(),
+                    itemCount: 2,itemBuilder: (BuildContext context, int index){
+                    return VaccinationsCatogery(itemVaccinations: itemVaccinations[index+11],
+
+                    );
+                  },),
+
+
+
+
+                ],
               ),
-              SizedBox(height: 8,),
-              Container(height: 65,
-                width:380 ,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  border: Border.all(
-                    color: Color(0xFF8C8A8A), // Border color
-                    // Border width
-                  ),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.only(left:12,top: 12),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+            ),
+            SizedBox(height: 24,),
+            Padding(
+              padding: const EdgeInsets.only(left:24,right: 24),
+              child: Column(
+                children: [
+                  Row(
                     children: [
-                      Text('Hepatitis B (HepB)',style: TextStyle(fontSize: 12,fontWeight: FontWeight.w400),),
-                      Row(
-                        children: [
-                          Text('04-Jan-2024',style: TextStyle(fontSize: 10,fontWeight: FontWeight.w500,color: Color(0xFF8C8A8A)),),
-                          SizedBox(width: 149,),
-                          InkWell(
-                            onTap: (){
-                              setState(() {
-                                isDone=!isDone;
-                              });
-                            },
-                            child: Container(
-                              width: 64,
-                              height: 29,
-                              decoration: BoxDecoration(
-                                  color: isDone ? Color(0xFFE3FFDA) : Color(0xFF78D956),
-                                  borderRadius: BorderRadius.circular(8)),
-                              alignment: Alignment.center,
-                              child: Text('Done',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w500,  color: isDone ? Color(0xFFA3E58B) : Color(0xFFE3FFDA),),),
-                            ),
-                          )
+                      Image.asset(
+                          width: 20,
+                          "assets/Line 1.png"),
+                      const SizedBox(width: 8,),
+                      const Text(' Month 18',style: TextStyle(fontSize: 12,fontWeight:FontWeight.w400 ),),
 
-                        ],
-                      ),
+
                     ],
+
                   ),
-                ),
+                  const SizedBox(height: 8,),
+                  ListView.builder(
+                    shrinkWrap: true,
+                    physics:NeverScrollableScrollPhysics(),
+                    itemCount: 2,itemBuilder: (BuildContext context, int index){
+                    return VaccinationsCatogery(itemVaccinations: itemVaccinations[index+13],
+
+                    );
+                  },),
+
+
+
+
+                ],
               ),
-              SizedBox(height: 8,),
-              Container(height: 65,
-                width:380 ,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  border: Border.all(
-                    color: Color(0xFF8C8A8A), // Border color
-                    // Border width
-                  ),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.only(left:12,top: 12),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+            ),
+            SizedBox(height: 24,),
+            Padding(
+              padding: const EdgeInsets.only(left:24,right: 24),
+              child: Column(
+                children: [
+                  Row(
                     children: [
-                      Text('Hepatitis B (HepB)',style: TextStyle(fontSize: 12,fontWeight: FontWeight.w400),),
-                      Row(
-                        children: [
-                          Text('04-Jan-2024',style: TextStyle(fontSize: 10,fontWeight: FontWeight.w500,color: Color(0xFF8C8A8A)),),
-                          SizedBox(width: 149,),
-                          InkWell(
-                            onTap: (){
-                              setState(() {
-                                isDone=!isDone;
-                              });
-                            },
-                            child: Container(
-                              width: 64,
-                              height: 29,
-                              decoration: BoxDecoration(
-                                  color: isDone ? Color(0xFFE3FFDA) : Color(0xFF78D956),
-                                  borderRadius: BorderRadius.circular(8)),
-                              alignment: Alignment.center,
-                              child: Text('Done',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w500,  color: isDone ? Color(0xFFA3E58B) : Color(0xFFE3FFDA),),),
-                            ),
-                          )
+                      Image.asset(
+                          width: 20,
+                          "assets/Line 1.png"),
+                      const SizedBox(width: 8,),
+                      const Text('Year 5',style: TextStyle(fontSize: 12,fontWeight:FontWeight.w400 ),),
 
-                        ],
-                      ),
+
                     ],
+
                   ),
-                ),
+                  const SizedBox(height: 8,),
+                  ListView.builder(
+                    shrinkWrap: true,
+                    physics:NeverScrollableScrollPhysics(),
+                    itemCount: 3,itemBuilder: (BuildContext context, int index){
+                    return VaccinationsCatogery(itemVaccinations: itemVaccinations[index+15],
+
+                    );
+                  },),
+
+
+
+
+                ],
               ),
+            ),
 
 
 
 
 
+          ],
 
-
-            ],
-          ),
         ),
-
-      ],),
+      ),
 
 
     );
