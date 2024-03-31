@@ -38,10 +38,14 @@ dependencies:
 
   datetime_picker_formfield: ^2.0.0
 #  periodic_alarm: ^0.0.41
-  awesome_notifications: 0.8.2
+  awesome_notifications: any
   awesome_notifications_core: 0.8.1
   hive: ^2.2.3
   hive_flutter: ^1.1.0
+
+  calendar_agenda: ^0.0.2+3
+  get: ^4.6.5
+  dio: ^5.4.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

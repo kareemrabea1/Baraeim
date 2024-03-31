@@ -16,14 +16,14 @@ class _HomeForArticalState extends State<HomeForArtical> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height:84 ,),
+            const SizedBox(height:84 ,),
             Stack(
               children: [
                 Container(
                   width: 380,
                   height: 155,
                   decoration: BoxDecoration(
-                   color: Color(0xFFFFE4EE),
+                   color: const Color(0xFFFFE4EE),
                     borderRadius: BorderRadius.circular(20),),
 
                 ),
@@ -40,12 +40,12 @@ class _HomeForArticalState extends State<HomeForArtical> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                    Text('Welcome ,',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w700,color: Color(0xFFE17BB4),),),
-                    SizedBox(height: 8,),
-                    Text('To know how your child is ',style: TextStyle(fontSize: 9,fontWeight: FontWeight.w700),),
-                    Text('developing and track his ',style: TextStyle(fontSize: 9,fontWeight: FontWeight.w700),),
-                    Text('condition',style: TextStyle(fontSize: 9,fontWeight: FontWeight.w700),),
-                      SizedBox(height: 8,),
+                    const Text('Welcome ,',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w700,color: Color(0xFFE17BB4),),),
+                    const SizedBox(height: 8,),
+                    const Text('To know how your child is ',style: TextStyle(fontSize: 9,fontWeight: FontWeight.w700),),
+                    const Text('developing and track his ',style: TextStyle(fontSize: 9,fontWeight: FontWeight.w700),),
+                    const Text('condition',style: TextStyle(fontSize: 9,fontWeight: FontWeight.w700),),
+                      const SizedBox(height: 8,),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           backgroundColor:const Color(0xFFE17BB4),
@@ -61,7 +61,7 @@ class _HomeForArticalState extends State<HomeForArtical> {
 
               ],
             ),
-            SizedBox(height:32),
+            const SizedBox(height:32),
             SizedBox(
               height: 78,
               child: ListView(
@@ -75,7 +75,7 @@ class _HomeForArticalState extends State<HomeForArtical> {
                           width: 84,
                           height: 78,
                           decoration: BoxDecoration(borderRadius: BorderRadius.circular(15),
-                            color: Color(0x996A7AFA),
+                            color: const Color(0x996A7AFA),
                           ),
                           child: Column(
                             children: [
@@ -86,19 +86,19 @@ class _HomeForArticalState extends State<HomeForArtical> {
                                     width: 24,
                                     'assets/BookOpenText.png'),
                               ),
-                              Text('Articles',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400,color: Color(0xffffffff)), textAlign: TextAlign.center,)
+                              const Text('Articles',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400,color: Color(0xffffffff)), textAlign: TextAlign.center,)
                             ],
                           ),
                         ),
                       ),
-                      SizedBox(width: 12,),
+                      const SizedBox(width: 12,),
                       InkWell(
                         onTap: (){},
                         child: Container(
                           width: 84,
                           height: 78,
                           decoration: BoxDecoration(borderRadius: BorderRadius.circular(15),
-                            color: Color(0xB258CF99),
+                            color: const Color(0xB258CF99),
                           ),
                           child: Column(
                             children: [
@@ -109,19 +109,19 @@ class _HomeForArticalState extends State<HomeForArtical> {
                                     width: 24,
                                     'assets/Pregrnant.png'),
                               ),
-                              Text('Pregrnant',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400,color: Color(0xffffffff)), textAlign: TextAlign.center,)
+                              const Text('Pregrnant',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400,color: Color(0xffffffff)), textAlign: TextAlign.center,)
                             ],
                           ),
                         ),
                       ),
-                      SizedBox(width: 12,),
+                      const SizedBox(width: 12,),
                       InkWell(
                         onTap: (){},
                         child: Container(
                           width: 84,
                           height: 78,
                           decoration: BoxDecoration(borderRadius: BorderRadius.circular(15),
-                            color: Color(0xA5FF9D00),
+                            color: const Color(0xA5FF9D00),
                           ),
                           child: Column(
                             children: [
@@ -132,19 +132,19 @@ class _HomeForArticalState extends State<HomeForArtical> {
                                     width: 24,
                                     'assets/Modern parenting.png'),
                               ),
-                              Text('Modern parenting',style: TextStyle(fontSize: 12,fontWeight: FontWeight.w400,color: Color(0xffffffff)), textAlign: TextAlign.center,)
+                              const Text('Modern parenting',style: TextStyle(fontSize: 12,fontWeight: FontWeight.w400,color: Color(0xffffffff)), textAlign: TextAlign.center,)
                             ],
                           ),
                         ),
                       ),
-                      SizedBox(width: 12,),
+                      const SizedBox(width: 12,),
                       InkWell(
                         onTap: (){},
                         child: Container(
                           width: 84,
                           height: 78,
                           decoration: BoxDecoration(borderRadius: BorderRadius.circular(15),
-                            color: Color(0x99FA90C2),
+                            color: const Color(0x99FA90C2),
                           ),
                           child: Column(
                             children: [
@@ -155,7 +155,7 @@ class _HomeForArticalState extends State<HomeForArtical> {
                                     width:24 ,
                                     'assets/face.png'),
                               ),
-                              Text('Baby',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400,color: Color(0xffffffff)), textAlign: TextAlign.center,)
+                              const Text('Baby',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400,color: Color(0xffffffff)), textAlign: TextAlign.center,)
                             ],
                           ),
                         ),
