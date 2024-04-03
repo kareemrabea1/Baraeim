@@ -3,11 +3,12 @@ import 'dart:async';
 import 'package:baraeim/assets.dart';
 import 'package:baraeim/home_page/data/models/sevices_model.dart';
 import 'package:baraeim/home_page/presentation/widgets/header_home_screen.dart';
-import 'package:baraeim/home_page/presentation/widgets/water_dialog.dart';
+import 'package:baraeim/home_page/presentation/widgets/pregrnant_dialog.dart';
 import 'package:flutter/material.dart';
 
 import '../../../colors_app.dart';
 import '../../../healthy_diet_page/presentation/pages/healthy_diet_screen.dart';
+import '../../../home_page_as_pregnant/presentation/widgets/water_dialog.dart';
 import '../widgets/card_baby_details.dart';
 
 class HomeScreen extends StatefulWidget {

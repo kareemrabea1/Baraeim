@@ -28,4 +28,25 @@ class Assets{
   static const String userIcon = 'assets/userIcon.png';
   static const String patternBackGround = 'assets/patternBackGround.png';
   static const String healthyDiet = 'assets/healthy_diet.png';
+  static const String Articles1 = 'assets/Articles1.png';
+  static const String Articles2 = 'assets/Articles2.png';
+  static const String Articles3 = 'assets/Articles3.png';
+  static const String Baby1 = 'assets/Baby1.png';
+  static const String Baby2 = 'assets/Baby2.png';
+  static const String Baby3 = 'assets/Baby3.png';
+  static const String Modernparenting1 = 'assets/Modern parenting1.png';
+  static const String Modernparenting2 = 'assets/Modern parenting2.png';
+  static const String Modernparenting3 = 'assets/Modern parenting3.png';
+  static const String Pregrnant1 = 'assets/Pregrnant1.png';
+  static const String Pregrnant2 = 'assets/Pregrnant2.png';
+  static const String Pregrnant3 = 'assets/Pregrnant3.png';
+  static const String videoImage = 'assets/videoImage.png';
+  static const String VaccinationsActive = 'assets/VaccinationsActive.png';
+  static const String VaccinationsDisActive = 'assets/VaccinationsDisActive.png';
+  static const String DevelopmentActive = 'assets/DevelopmentActive.png';
+  static const String DevelopmentDisActive = 'assets/DevelopmentDisActive.png';
+  static const String womanImage = 'assets/womanImage.png';
+  static const String birthDayImage = 'assets/birthDayImage.png';
+  static const String imageBaby = 'assets/imageBaby.png';
+
 }
