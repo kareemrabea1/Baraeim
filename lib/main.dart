@@ -3,6 +3,7 @@ import 'package:baraeim/screens/alarm1.dart';
 import 'package:baraeim/screens/daily_exercise.dart';
 import 'package:baraeim/screens/home_for_artical.dart';
 import 'package:baraeim/screens/modern_parenting.dart';
+import 'package:baraeim/screens/tips.dart';
 import 'package:baraeim/screens/vaccinations.dart';
 import 'package:baraeim/utils/fcm.dart';
 import 'package:flutter/material.dart';
@@ -25,9 +26,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-       
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-
         useMaterial3: false,
       ),
       home:  const BasePage(),

@@ -3,6 +3,8 @@ import 'package:baraeim/colors_app.dart';
 import 'package:flutter/material.dart';
 
 import '../../../healthy_diet_page/presentation/pages/healthy_diet_screen.dart';
+import '../../../screens/daily_exercise.dart';
+import '../../../screens/modern_parenting.dart';
 
 class ServiceModel {
   final String image;
@@ -21,7 +23,7 @@ class ServiceModel {
     ServiceModel(
       text: 'Daily Exercise',
       image: Assets.exerciseIcon,
-      color: ColorsApp.primary, page: const HealthyDietScreen(),
+      color: ColorsApp.primary, page: const DailyExercise(),
     ),
     ServiceModel(page: const HealthyDietScreen(),
       text: 'Drugs Influencing Pregnancy',
@@ -33,7 +35,7 @@ class ServiceModel {
       image: Assets.healthyDiet,
       color: ColorsApp.green,
     ),
-    ServiceModel(page: const HealthyDietScreen(),
+    ServiceModel(page: const ModernParenting(),
       text: 'Modern parenting',
       image: Assets.stepsIcon,
       color: ColorsApp.orange,
