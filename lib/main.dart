@@ -1,17 +1,20 @@
+import 'package:baraeim/base_page/presentation/pages/base_page.dart';
+
 import 'package:baraeim/screens/Register_as_mother.dart';
 import 'package:baraeim/screens/Register_as_pregrnant.dart';
-import 'package:baraeim/screens/alarm1.dart';
 import 'package:baraeim/screens/choose_register.dart';
 import 'package:baraeim/screens/daily_exercise.dart';
 import 'package:baraeim/screens/forget_password.dart';
 import 'package:baraeim/screens/home_for_artical.dart';
 import 'package:baraeim/screens/login.dart';
 import 'package:baraeim/screens/modern_parenting.dart';
+import 'package:baraeim/screens/tips.dart';
 import 'package:baraeim/screens/onboarding1.dart';
 import 'package:baraeim/screens/onboarding2.dart';
 import 'package:baraeim/screens/onboarding3.dart';
 import 'package:baraeim/screens/indicator_view.dart';
 import 'package:baraeim/screens/un%20splash.dart';
+
 import 'package:baraeim/screens/vaccinations.dart';
 import 'package:baraeim/utils/fcm.dart';
 import 'package:flutter/material.dart';
@@ -34,26 +37,13 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a blue toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-
-        useMaterial3: true,
+        useMaterial3: false,
       ),
+      // home:  const BasePage(),
+
       home:Un_splach(),
+
     );
   }
 }

@@ -12,7 +12,7 @@ class Un_splach extends StatefulWidget {
 class _Un_splachState extends State<Un_splach> {
   @override
   void initState() {
-    Future.delayed(Duration(seconds: 2),(){
+    Future.delayed(const Duration(seconds: 2),(){
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage() ));
     });
     // TODO: implement initState

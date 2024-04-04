@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../base_page_as_pregrnant/presentation/pages/base_page_as_pregrnant.dart';
+
 class RegisterAsPregrnant extends StatefulWidget {
   const RegisterAsPregrnant({super.key});
 
@@ -183,6 +185,10 @@ Maecenas facilisis sed ipsum iaculis semper.""",
 
                   ),
                   onPressed: () {
+///todo: login as Pregrnant
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const BasePageAsPregrnant()));
 
                   },
                   child:

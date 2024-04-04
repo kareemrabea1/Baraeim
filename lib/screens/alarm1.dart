@@ -1,3 +1,4 @@
+import 'package:baraeim/colors_app.dart';
 import 'package:baraeim/screens/alarm%202.dart';
 import 'package:flutter/material.dart';
 
@@ -12,15 +13,11 @@ class _Alarm1State extends State<Alarm1> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      appBar:AppBar( leading:Padding(
-        padding: const EdgeInsets.only(left: 36, right: 4, top: 20, bottom: 20),
-        child: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () {Navigator.pop(context);},
-        ),
-      ), ),
+      backgroundColor: ColorsApp.white,
+
       body: Column(
         children: [
+          SizedBox(height: 50,),
           Padding(
             padding: const EdgeInsets.only(top:186,left: 138,right: 137),
             child: Image.asset(

@@ -1,3 +1,5 @@
+import 'package:baraeim/base_page/presentation/pages/base_page.dart';
+import 'package:baraeim/home_page/presentation/pages/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class RegisterAsMother extends StatefulWidget {
@@ -259,7 +261,10 @@ Maecenas facilisis sed ipsum iaculis semper.""",
 
                   ),
                   onPressed: () {
-
+                    ///todo: login as Mother
+                     Navigator.push(
+                                        context,
+                                        MaterialPageRoute(builder: (context) => const BasePage()));
                   },
                   child:
                   const Text('Register',style: TextStyle(color: Colors.white,
