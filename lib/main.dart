@@ -1,5 +1,4 @@
 import 'package:baraeim/base_page/presentation/pages/base_page.dart';
-import 'package:baraeim/home_page/presentation/pages/home_screen.dart';
 
 import 'package:baraeim/screens/Register_as_mother.dart';
 import 'package:baraeim/screens/Register_as_pregrnant.dart';
@@ -43,7 +42,7 @@ class MyApp extends StatelessWidget {
       ),
       // home:  const BasePage(),
 
-      home:BasePage(),
+      home:Un_splach(),
 
     );
   }
