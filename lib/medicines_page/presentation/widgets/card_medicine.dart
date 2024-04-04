@@ -13,7 +13,7 @@ class CardMedicine extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.push(context,MaterialPageRoute(builder: (context) =>  MedicineDetailsScreen(medicineID: medicine.id??0,),));
+        Navigator.push(context,MaterialPageRoute(builder: (context) =>  MedicineDetailsScreen(medicineID: medicine),));
       },
       child: Container(
         clipBehavior: Clip.hardEdge,
@@ -26,7 +26,7 @@ class CardMedicine extends StatelessWidget {
         child: Column(children: [
           Expanded(
             flex: 4,
-            child: Image.network(medicine.image??'',fit: BoxFit.cover,width: double.infinity,),),
+            child: Image.asset(medicine.image??'',fit: BoxFit.cover,width: double.infinity,),),
            Expanded(flex: 2,
             child: Padding(
               padding:  const EdgeInsets.symmetric(horizontal: 12.0),

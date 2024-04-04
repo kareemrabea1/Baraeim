@@ -17,7 +17,7 @@ final String image;
         height: size.height / 2,
         width: double.infinity,
         decoration:  BoxDecoration(
-          image: DecorationImage( fit:BoxFit.fill ,image: NetworkImage(image,),),
+          image: DecorationImage( fit:BoxFit.cover ,image: AssetImage(image,),),
           borderRadius: BorderRadius.vertical(
             bottom: Radius.circular(40),
           ),

@@ -43,7 +43,7 @@ final String image;
               elevation: 0,
             ),
             Expanded(
-                child: Image.network(
+                child: Image.asset(
                   image,
                   fit: BoxFit.fill,
                 ))

@@ -1,5 +1,6 @@
 import 'package:baraeim/assets.dart';
 import 'package:baraeim/colors_app.dart';
+import 'package:baraeim/medicines_page/data/models/all_medicine_diets_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -10,20 +11,20 @@ import '../widgets/header_medicine_datailsscreen.dart';
 class MedicineDetailsScreen extends StatefulWidget {
   const MedicineDetailsScreen({super.key, required this.medicineID});
 
-  final int medicineID;
+  final AllMedicineModel medicineID;
 
   @override
   State<MedicineDetailsScreen> createState() => _MedicineDetailsScreenState();
 }
 
 class _MedicineDetailsScreenState extends State<MedicineDetailsScreen> {
-  MedicineDetailsModel medicineDetails = MedicineDetailsModel();
+
 
   fetchData() async {
-    FetchMedicineDetailsRepository fetchAllHealthyDietsRepository =
-        FetchMedicineDetailsRepository();
-    medicineDetails = await fetchAllHealthyDietsRepository.getAllMedicineDiets(
-        id: widget.medicineID);
+    // FetchMedicineDetailsRepository fetchAllHealthyDietsRepository =
+    //     FetchMedicineDetailsRepository();
+    // widget.medicineDetails = await fetchAllHealthyDietsRepository.getAllMedicineDiets(
+    //     id: widget.medicineID);
   }
 
   @override
@@ -42,7 +43,7 @@ class _MedicineDetailsScreenState extends State<MedicineDetailsScreen> {
       body: Column(
         children: [
           HeaderMedicineDetailsScreen(
-            image: medicineDetails.image ?? '',
+            image: widget.medicineID.image ?? '',
           ),
           Expanded(
             child: Padding(
@@ -56,7 +57,7 @@ class _MedicineDetailsScreenState extends State<MedicineDetailsScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        medicineDetails.name ?? '',
+                        widget.medicineID.name ?? '',
                         style:
                             const TextStyle(fontSize: 24, color: ColorsApp.primary),
                       ),
@@ -67,7 +68,7 @@ class _MedicineDetailsScreenState extends State<MedicineDetailsScreen> {
                     height: 20,
                   ),
                   Text(
-                    medicineDetails.description ?? '',
+                    widget.medicineID.title ?? '',
                     style: const TextStyle(
                         fontSize: 14, color: ColorsApp.subtitleColor),
                   )

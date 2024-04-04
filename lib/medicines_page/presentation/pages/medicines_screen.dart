@@ -13,12 +13,28 @@ class MedicinesScreen extends StatefulWidget {
   @override
   State<MedicinesScreen> createState() => _MedicinesScreenState();
 }
-List<AllMedicineModel > medicineDetails=[];
-fetchData()async{
-  FetchAllMedicineRepository fetchAllHealthyDietsRepository=FetchAllMedicineRepository();
-  medicineDetails =await fetchAllHealthyDietsRepository.getAllMedicine();
 
+List<AllMedicineModel> medicineDetails = [
+  AllMedicineModel(
+    id: 1,
+    image: Assets.medicine,
+    title:
+        'Pregnancy Yoga helps alleviate the effect of common symptoms such as morning sickness, painful leg cramps, swollen ankles, and constipation. Pregnancy Yoga helps alleviate the effect of common symptoms such as morning sickness, painful leg cramps, swollen ankles, and constipation. Pregnancy Yoga helps alleviate the effect of common symptoms such as morning sickness, painful leg cramps, swollen ankles, and constipation.Pregnancy Yoga helps alleviate the effect of common symptoms such as morning sickness, painful leg cramps, swollen ankles, and constipation. Pregnancy Yoga helps alleviate the effect of common symptoms such as morning sickness, painful leg cramps, swollen ankles, and constipation. Pregnancy Yoga helps alleviate the effect of common symptoms such as morning sickness, painful leg cramps, swollen ankles, and constipation.',
+    name: 'Viparita Karani',
+  ),
+  AllMedicineModel(
+    id: 2,
+    image: Assets.medicine2,
+    title:
+        'Pregnancy Yoga helps alleviate the effect of common symptoms such as morning sickness, painful leg cramps, swollen ankles, and constipation. Pregnancy Yoga helps alleviate the effect of common symptoms such as morning sickness, painful leg cramps, swollen ankles, and constipation. Pregnancy Yoga helps alleviate the effect of common symptoms such as morning sickness, painful leg cramps, swollen ankles, and constipation.Pregnancy Yoga helps alleviate the effect of common symptoms such as morning sickness, painful leg cramps, swollen ankles, and constipation. Pregnancy Yoga helps alleviate the effect of common symptoms such as morning sickness, painful leg cramps, swollen ankles, and constipation. Pregnancy Yoga helps alleviate the effect of common symptoms such as morning sickness, painful leg cramps, swollen ankles, and constipation.',
+    name: 'Viparita Karani',
+  )
+];
 
+fetchData() async {
+  FetchAllMedicineRepository fetchAllHealthyDietsRepository =
+      FetchAllMedicineRepository();
+  medicineDetails = await fetchAllHealthyDietsRepository.getAllMedicine();
 }
 
 class _MedicinesScreenState extends State<MedicinesScreen> {
@@ -26,9 +42,10 @@ class _MedicinesScreenState extends State<MedicinesScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    fetchData();
+    // fetchData();
     setState(() {});
   }
+
   @override
   Widget build(BuildContext context) {
     TextEditingController controller = TextEditingController();
@@ -63,7 +80,9 @@ class _MedicinesScreenState extends State<MedicinesScreen> {
                 ),
               ),
             ),
-            SizedBox(height: 30,),
+            SizedBox(
+              height: 30,
+            ),
             Expanded(
               child: GridView.builder(
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -73,7 +92,9 @@ class _MedicinesScreenState extends State<MedicinesScreen> {
                   mainAxisSpacing: 15,
                 ),
                 itemBuilder: (context, index) {
-                  return CardMedicine(medicine: medicineDetails[index],);
+                  return CardMedicine(
+                    medicine: medicineDetails[index],
+                  );
                 },
                 itemCount: medicineDetails.length,
               ),

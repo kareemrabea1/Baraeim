@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 
 import '../../../assets.dart';
 import '../../../colors_app.dart';
+import '../../data/models/all_healthy_diets_model.dart';
 import '../../data/models/healthy_diets_details_model.dart';
 import '../../domain/repositories/fech_all_healthy_diet_repository.dart';
 import '../../domain/repositories/fech_healthy_diet_details_repository.dart';
@@ -11,7 +12,7 @@ import '../widgets/card_healthy_diet.dart';
 
 class HealthyDietDetailsScreen extends StatefulWidget {
   const HealthyDietDetailsScreen({super.key, required this.healthyDietId});
-final int healthyDietId;
+final AllHealthyDietsModel healthyDietId;
   @override
   State<HealthyDietDetailsScreen> createState() =>
       _HealthyDietDetailsScreenState();
@@ -44,21 +45,21 @@ List foodDetails = [
 
 
 class _HealthyDietDetailsScreenState extends State<HealthyDietDetailsScreen> {
-  fetchData() async {
-    FetchHealthyDietsDetailsRepository fetchAllHealthyDietsRepository =
-    FetchHealthyDietsDetailsRepository();
-    healthyDietsDetails =
-    await fetchAllHealthyDietsRepository.getAllHealthyDiets(id: widget.healthyDietId);
-    foodDetails[0]['mount'] = healthyDietsDetails.calories;
-    foodDetails[1]['mount'] = healthyDietsDetails.fat;
-    foodDetails[2]['mount'] = healthyDietsDetails.protein;
-    foodDetails[3]['mount'] = healthyDietsDetails.carbs;
-  }
+  // fetchData() async {
+  //   FetchHealthyDietsDetailsRepository fetchAllHealthyDietsRepository =
+  //   FetchHealthyDietsDetailsRepository();
+  //   healthyDietsDetails =
+  //   await fetchAllHealthyDietsRepository.getAllHealthyDiets(id: widget.healthyDietId);
+  //   foodDetails[0]['mount'] = healthyDietsDetails.calories;
+  //   foodDetails[1]['mount'] = healthyDietsDetails.fat;
+  //   foodDetails[2]['mount'] = healthyDietsDetails.protein;
+  //   foodDetails[3]['mount'] = healthyDietsDetails.carbs;
+  // }
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    fetchData();
+    // fetchData();
     setState(() {});
   }
 
@@ -69,7 +70,7 @@ class _HealthyDietDetailsScreenState extends State<HealthyDietDetailsScreen> {
       body: Column(
         children: [
           HeaderHealthyDietScreen(
-            image: healthyDietsDetails.image ?? '',
+            image: widget.healthyDietId.image ?? '',
           ),
           Expanded(
             child: Padding(
@@ -83,7 +84,7 @@ class _HealthyDietDetailsScreenState extends State<HealthyDietDetailsScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        healthyDietsDetails.title ?? '',
+                        widget.healthyDietId.title ?? '',
                         style: const TextStyle(
                           fontSize: 20,
                         ),
@@ -95,7 +96,7 @@ class _HealthyDietDetailsScreenState extends State<HealthyDietDetailsScreen> {
                     height: 20,
                   ),
                   Text(
-                    healthyDietsDetails.description ?? '',
+                    widget.healthyDietId.name ?? '',
                     style: const TextStyle(
                         fontSize: 14, color: ColorsApp.subtitleColor),
                   ),

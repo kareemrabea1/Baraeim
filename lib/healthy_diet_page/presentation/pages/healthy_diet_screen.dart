@@ -13,7 +13,18 @@ class HealthyDietScreen extends StatefulWidget {
   State<HealthyDietScreen> createState() => _HealthyDietScreenState();
 }
 
-List<AllHealthyDietsModel> allHealthyDiets = [];
+List<AllHealthyDietsModel> allHealthyDiets = [
+  AllHealthyDietsModel(
+      id: 1,
+      name: 'Fried Riced with egg Fresh ',
+      title: 'Fried Riced with egg Fresh ',
+      image: Assets.foodImage),
+  AllHealthyDietsModel(
+      id: 1,
+      name: 'Spinach salad Fresh ',
+      title: 'Spinach salad Fresh  ',
+      image: Assets.saladImage),
+];
 
 fetchData() async {
   FetchAllHealthyDietsRepository fetchAllHealthyDietsRepository =
@@ -24,7 +35,7 @@ fetchData() async {
 class _HealthyDietScreenState extends State<HealthyDietScreen> {
   @override
   void initState() {
-    fetchData();
+    // fetchData();
     setState(() {});
     super.initState();
   }

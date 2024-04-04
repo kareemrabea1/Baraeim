@@ -48,5 +48,9 @@ class Assets{
   static const String womanImage = 'assets/womanImage.png';
   static const String birthDayImage = 'assets/birthDayImage.png';
   static const String imageBaby = 'assets/imageBaby.png';
+  static const String chart1 = 'assets/Area chart 01.png';
+  static const String chart2 = 'assets/Single-small-01.png';
+  static const String saladImage = 'assets/saladImage.png';
+  static const String medicine2 = 'assets/medicine2.png';
 
 }

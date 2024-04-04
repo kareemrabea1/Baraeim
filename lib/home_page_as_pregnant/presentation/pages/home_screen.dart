@@ -1,15 +1,12 @@
 import 'dart:async';
 
 import 'package:baraeim/assets.dart';
-import 'package:baraeim/home_page/data/models/sevices_model.dart';
-import 'package:baraeim/home_page/presentation/widgets/header_home_screen.dart';
 import 'package:baraeim/home_page/presentation/widgets/pregrnant_dialog.dart';
 import 'package:flutter/material.dart';
+import 'package:syncfusion_flutter_charts/charts.dart';
 
 import '../../../colors_app.dart';
-import '../../../healthy_diet_page/presentation/pages/healthy_diet_screen.dart';
 import '../../../listhome_for_artical.dart';
-import '../widgets/card_baby_details.dart';
 
 class HomeScreenAsPregnant extends StatefulWidget {
   const HomeScreenAsPregnant({super.key});
@@ -19,8 +16,19 @@ class HomeScreenAsPregnant extends StatefulWidget {
 }
 
 class _HomeScreenAsPregnantState extends State<HomeScreenAsPregnant> {
+  List<ChartData> data = [];
+
   @override
   void initState() {
+    data = [
+      ChartData(value: 20, day: 1),
+      ChartData(value: 25, day: 2),
+      ChartData(value: 30, day: 3),
+      ChartData(value: 40, day: 4),
+      ChartData(value: 90, day: 5),
+      ChartData(value: 50, day: 6),
+      ChartData(value: 100, day: 7),
+    ];
     // Future.delayed(Duration(seconds: 10),() {
     //
     // },);
@@ -152,6 +160,78 @@ class _HomeScreenAsPregnantState extends State<HomeScreenAsPregnant> {
             const SizedBox(
               height: 12,
             ),
+            Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Container(padding: EdgeInsets.all(18),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20),boxShadow:[BoxShadow(color: Colors.grey,blurRadius: 10,spreadRadius: 1)]),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('50Cm',style: TextStyle(fontSize: 22,fontWeight: FontWeight.w700),),
+                      SizedBox(height: 4,),
+                      Text('Length',style: TextStyle(fontSize: 16,fontWeight: FontWeight.w400),),
+                      SizedBox(height: 10,),
+                      Image.asset(Assets.chart1)
+                      
+                    ],
+                  ),
+                ),
+
+                Container(padding: EdgeInsets.all(18),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20),boxShadow:[BoxShadow(color: Colors.grey,blurRadius: 10,spreadRadius: 1)]),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('20kg',style: TextStyle(fontSize: 22,fontWeight: FontWeight.w700),),
+                      SizedBox(height: 4,),
+                      Text('Weight',style: TextStyle(fontSize: 16,fontWeight: FontWeight.w400),),
+                      SizedBox(height: 10,),
+                      Image.asset(Assets.chart2)
+
+                    ],
+                  ),
+                ),
+             //    Container(color: Colors.indigo,
+             //      height: 170,
+             //      child: SfCartesianChart(
+             //        margin: EdgeInsets.all(10),
+             //        borderWidth: 0,
+             //        backgroundColor: Colors.transparent,
+             //        plotAreaBorderWidth: 0,
+             //        plotAreaBorderColor: Colors.transparent,
+             //        primaryXAxis: NumericAxis(
+             //          minimum: 17,
+             //          maximum: 100,
+             //          isVisible: false,
+             //          interval: 1,
+             //          borderColor: Colors.transparent,
+             //          borderWidth: 0,
+             //        ),
+             //        primaryYAxis: NumericAxis(
+             //          minimum: 0,
+             //          maximum: 8,
+             //          isVisible: false,
+             //          interval: 100,
+             //          borderColor: Colors.transparent,
+             //          borderWidth: 0,
+             //        ),
+             //        series: <ChartSeries<ChartData, int>>[
+             //          SplineAreaSeries(
+             //            dataSource: data,
+             //            xValueMapper: (datum, index) => datum.day,
+             //            yValueMapper: (datum, index) => datum.value,
+             //            gradient: LinearGradient(colors: [Colors.red,Colors.red]),
+             //
+             //          )
+             //        ],
+             //      ),
+             //    ),
+              ],
+            ),
             const SizedBox(
               height: 24,
             ),
@@ -206,4 +286,14 @@ class _HomeScreenAsPregnantState extends State<HomeScreenAsPregnant> {
       ),
     );
   }
+}
+
+class ChartData {
+  double value = 0;
+  int day = 0;
+
+  ChartData({
+    required this.value,
+    required this.day,
+  });
 }

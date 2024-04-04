@@ -14,7 +14,7 @@ class CardHealthyDiet extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.push(context,MaterialPageRoute(builder: (context) =>  HealthyDietDetailsScreen(healthyDietId: healthyDiets.id??0),));
+        Navigator.push(context,MaterialPageRoute(builder: (context) =>  HealthyDietDetailsScreen(healthyDietId: healthyDiets),));
       },
       child: Container(
         padding: const EdgeInsets.all(13),
@@ -27,15 +27,17 @@ class CardHealthyDiet extends StatelessWidget {
         ),
         child: Column(
           children: [
-            Expanded(child: Image.network(healthyDiets.image??"")),
+            Expanded(child: Image.asset(healthyDiets.image??"")),
             Text(
               healthyDiets.title??'',
               style: const TextStyle(
                   fontSize: 16,
                   color: ColorsApp.white,
+
                   fontWeight: FontWeight.w400,
 
               ),
+              maxLines: 2,
             )
           ],
         ),

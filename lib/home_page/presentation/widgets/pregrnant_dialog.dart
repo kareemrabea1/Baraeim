@@ -62,6 +62,7 @@ class PregnantDialog extends StatelessWidget {
                   ),
                 ),
               ),
+              SizedBox(width: 20,),
               Expanded(
                 child: InkWell(
                   onTap: () {
@@ -82,7 +83,7 @@ class PregnantDialog extends StatelessWidget {
                           fontSize: 14,
                           fontWeight: FontWeight.w600,
                           fontFamily: 'Poppins',
-                          color: ColorsApp.white),
+                          color: ColorsApp.primary),
                     ),
                   ),
                 ),
