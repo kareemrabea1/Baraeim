@@ -36,7 +36,7 @@ class PregnantDialog extends StatelessWidget {
                 color: ColorsApp.textColor),
             textAlign: TextAlign.center,
           ),
-//////
+
           Row(
             children: [
               Expanded(
