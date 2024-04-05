@@ -1,4 +1,5 @@
 import 'package:baraeim/colors_app.dart';
+import 'package:baraeim/growth_test_page/presentation/pages/growth_test_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -41,7 +42,7 @@ class PregnantDialog extends StatelessWidget {
               Expanded(
                 child: InkWell(
                   onTap: () {
-                    Navigator.pop(context);
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const GrowthTestPage(),));
                   },
                   child: Container(
                     alignment: Alignment.center,
@@ -62,7 +63,7 @@ class PregnantDialog extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(width: 20,),
+              const SizedBox(width: 20,),
               Expanded(
                 child: InkWell(
                   onTap: () {
