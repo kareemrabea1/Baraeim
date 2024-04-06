@@ -50,7 +50,7 @@ class _MedicinesScreenState extends State<MedicinesScreen> {
   Widget build(BuildContext context) {
     TextEditingController controller = TextEditingController();
     return Scaffold(
-      backgroundColor: Colors.grey.withOpacity(0.05),
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -80,7 +80,7 @@ class _MedicinesScreenState extends State<MedicinesScreen> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Expanded(

@@ -12,7 +12,9 @@ import '../widgets/card_healthy_diet.dart';
 
 class HealthyDietDetailsScreen extends StatefulWidget {
   const HealthyDietDetailsScreen({super.key, required this.healthyDietId});
-final AllHealthyDietsModel healthyDietId;
+
+  final AllHealthyDietsModel healthyDietId;
+
   @override
   State<HealthyDietDetailsScreen> createState() =>
       _HealthyDietDetailsScreenState();
@@ -41,8 +43,6 @@ List foodDetails = [
     'countUnit': 'g',
   },
 ];
-
-
 
 class _HealthyDietDetailsScreenState extends State<HealthyDietDetailsScreen> {
   // fetchData() async {
@@ -83,10 +83,14 @@ class _HealthyDietDetailsScreenState extends State<HealthyDietDetailsScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        widget.healthyDietId.title ?? '',
-                        style: const TextStyle(
-                          fontSize: 20,
+                      Expanded(
+                        child: Text(
+                          widget.healthyDietId.title ?? '',
+                          style: const TextStyle(
+                            fontSize: 20,
+                          ),
+                          maxLines:1,
+                          overflow: TextOverflow.ellipsis,
                         ),
                       ),
                       const Icon(Icons.bookmark_border_rounded)
@@ -98,7 +102,9 @@ class _HealthyDietDetailsScreenState extends State<HealthyDietDetailsScreen> {
                   Text(
                     widget.healthyDietId.name ?? '',
                     style: const TextStyle(
-                        fontSize: 14, color: ColorsApp.subtitleColor),
+                      fontSize: 14,
+                      color: ColorsApp.subtitleColor,
+                    ),
                   ),
                   const SizedBox(
                     height: 26,
@@ -106,16 +112,19 @@ class _HealthyDietDetailsScreenState extends State<HealthyDietDetailsScreen> {
                   Row(
                     children: [
                       Expanded(
+
+                        flex: 2,
+
                         child: GridView.builder(
                           gridDelegate:
                               const SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 2,
                             childAspectRatio: 1.2,
                             crossAxisSpacing: 20,
-                            mainAxisSpacing: 15,
+                            mainAxisSpacing: 10,
                           ),
                           itemBuilder: (context, index) {
-                            return Column(
+                            return Column(crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
                                   '${foodDetails[index]['title']}',
@@ -142,9 +151,10 @@ class _HealthyDietDetailsScreenState extends State<HealthyDietDetailsScreen> {
                           itemCount: foodDetails.length,
                           physics: const NeverScrollableScrollPhysics(),
                           shrinkWrap: true,
+
                         ),
                       ),
-                      const Spacer(),
+                      const Spacer(flex: 1,),
                     ],
                   )
                 ],
