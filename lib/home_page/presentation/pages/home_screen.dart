@@ -89,8 +89,9 @@ class _HomeScreenState extends State<HomeScreen> {
                             },
                             child: Container(
                               padding: const EdgeInsets.symmetric(
-                                  horizontal: 12, vertical: 10),
-                              height: 100,
+                                horizontal: 12,
+                                vertical: 10,
+                              ),
                               width: 100,
                               decoration: BoxDecoration(
                                 color: ServiceModel.service[index].color,
@@ -167,7 +168,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       Assets.image,
                       height: 160,
                       width: double.infinity,
-                    ),const SizedBox(height: 10,),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
                     const Text(
                       'Avoid unsafe activities that carry a high risk of falling or that may cause trauma to your abdomen',
                       style: TextStyle(

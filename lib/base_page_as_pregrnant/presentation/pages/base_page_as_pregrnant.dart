@@ -44,6 +44,8 @@ class _BasePageAsPregrnantState extends State<BasePageAsPregrnant> {
 
   @override
   Widget build(BuildContext context) {
+    var size=MediaQuery.of(context).size;
+
     return Scaffold(
       body: IndexedStack(index: pageIndex, children: const [
         HomeScreenAsPregnant(),
@@ -96,7 +98,7 @@ class _BasePageAsPregrnantState extends State<BasePageAsPregrnant> {
                       padding: const EdgeInsets.symmetric(vertical: 8),
                       child: Image.asset(
                         pageIndex == index ? e[0] : e[1],
-                        height: 24,
+                        height: size.height*0.025,
                       ),
                     ),
                     Text(

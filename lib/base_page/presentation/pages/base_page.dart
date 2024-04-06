@@ -42,6 +42,7 @@ class _BasePageState extends State<BasePage> {
 
   @override
   Widget build(BuildContext context) {
+    var size=MediaQuery.of(context).size;
     return Scaffold(
       body: IndexedStack(index: pageIndex, children: const [
         HomeScreen(),
@@ -94,7 +95,7 @@ class _BasePageState extends State<BasePage> {
                       padding: const EdgeInsets.symmetric(vertical: 8),
                       child: Image.asset(
                         pageIndex == index ? e[0] : e[1],
-                        height: 24,
+                        height: size.height*0.025,
                       ),
                     ),
                     Text(
