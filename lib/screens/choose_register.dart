@@ -75,12 +75,15 @@ class _ChooseRegisterState extends State<ChooseRegister> {
 
               },
               child:
-              const Text('Register as mother',style: TextStyle(color: Colors.white,
-                fontSize: 16,
-                fontFamily: 'Poppins',
-                fontWeight: FontWeight.w600,
-                height: 0.09,
-                letterSpacing: 0.12,),),
+              Padding(
+                padding: const EdgeInsets.only(top: 14.0),
+                child: const Text('Register as mother',style: TextStyle(color: Colors.white,
+                  fontSize: 16,
+                  fontFamily: 'Poppins',
+                  fontWeight: FontWeight.w600,
+                  height: 0.09,
+                  letterSpacing: 0.12,),),
+              ),
 
             ),
             const SizedBox(height: 12,),
@@ -102,12 +105,15 @@ class _ChooseRegisterState extends State<ChooseRegister> {
 
               },
               child:
-              const Text('Register as pregrnant',style: TextStyle(color: Color(0xFFF687B3),
-                fontSize: 16,
-                fontFamily: 'Poppins',
-                fontWeight: FontWeight.w600,
-                height: 0.09,
-                letterSpacing: 0.12,),),
+              Padding(
+                padding: const EdgeInsets.only(top: 14.0),
+                child: const Text('Register as pregrnant',style: TextStyle(color: Color(0xFFF687B3),
+                  fontSize: 16,
+                  fontFamily: 'Poppins',
+                  fontWeight: FontWeight.w600,
+                  height: 0.09,
+                  letterSpacing: 0.12,),),
+              ),
 
             ),
           ],

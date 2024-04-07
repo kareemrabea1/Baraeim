@@ -45,12 +45,15 @@ class _OnBoarding3State extends State<OnBoarding3> {
 
             },
             child:
-                const Text('Get Started',style: TextStyle(color: Colors.white,
-                  fontSize: 16,
-                  fontFamily: 'Poppins',
-                  fontWeight: FontWeight.w600,
-                  height: 0.09,
-                  letterSpacing: 0.12,),),
+                Padding(
+                  padding: const EdgeInsets.only(top: 14.0),
+                  child: const Text('Get Started',style: TextStyle(color: Colors.white,
+                    fontSize: 16,
+                    fontFamily: 'Poppins',
+                    fontWeight: FontWeight.w600,
+                    height: 0.09,
+                    letterSpacing: 0.12,),),
+                ),
 
           ),
 

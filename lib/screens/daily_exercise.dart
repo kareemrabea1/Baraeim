@@ -53,6 +53,7 @@ class _DailyExerciseState extends State<DailyExercise> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.white,
           centerTitle: true,
           title:  const Padding(
             padding: EdgeInsets.only(
@@ -73,8 +74,9 @@ class _DailyExerciseState extends State<DailyExercise> {
             padding:
                 const EdgeInsets.only(left: 36, right: 4, top: 20, bottom: 20),
             child: IconButton(
-              icon: const Icon(Icons.arrow_back),
-              onPressed: () {},
+              icon: const Icon(Icons.arrow_back,color: Colors.black,),
+              onPressed: () {
+                Navigator.pop(context);},
             ),
           ),
         ),

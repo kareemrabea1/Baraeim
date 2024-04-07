@@ -20,10 +20,11 @@ class _Alarm3State extends State<Alarm3> {
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.white,
         leading:Padding(
           padding: const EdgeInsets.only(left: 36, right: 4, top: 20, bottom: 20),
           child: IconButton(
-            icon: const Icon(Icons.arrow_back),
+            icon: const Icon(Icons.arrow_back,color: Colors.black,),
             onPressed: () {Navigator.pop(context);},
           ),
         ),

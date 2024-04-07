@@ -267,12 +267,15 @@ Maecenas facilisis sed ipsum iaculis semper.""",
                                         MaterialPageRoute(builder: (context) => const BasePage()));
                   },
                   child:
-                  const Text('Register',style: TextStyle(color: Colors.white,
-                    fontSize: 16,
-                    fontFamily: 'Poppins',
-                    fontWeight: FontWeight.w600,
-                    height: 0.09,
-                    letterSpacing: 0.12,),),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 14.0),
+                    child: const Text('Register',style: TextStyle(color: Colors.white,
+                      fontSize: 16,
+                      fontFamily: 'Poppins',
+                      fontWeight: FontWeight.w600,
+                      height: 0.09,
+                      letterSpacing: 0.12,),),
+                  ),
 
 
                 ),
