@@ -72,11 +72,14 @@ class _HomeScreenAsPregnantState extends State<HomeScreenAsPregnant> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              const Text(
-                                'Jun 23,20204 years',
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w400,
+                              const Expanded(
+                                child: Text(
+                                  'Jun 23,20204 years',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w400,
+
+                                  ),
                                 ),
                               ),
                               Image.asset(Assets.birthDayImage),
@@ -162,39 +165,45 @@ class _HomeScreenAsPregnantState extends State<HomeScreenAsPregnant> {
             ),
             Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Container(padding: EdgeInsets.all(18),
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(20),boxShadow:[BoxShadow(color: Colors.grey,blurRadius: 10,spreadRadius: 1)]),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('50Cm',style: TextStyle(fontSize: 22,fontWeight: FontWeight.w700),),
-                      SizedBox(height: 4,),
-                      Text('Length',style: TextStyle(fontSize: 16,fontWeight: FontWeight.w400),),
-                      SizedBox(height: 10,),
-                      Image.asset(Assets.chart1)
-                      
-                    ],
+                const SizedBox(width: 10,),
+                Expanded(
+                  child: Container(padding: const EdgeInsets.all(18),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(20),boxShadow:[const BoxShadow(color: Colors.grey,blurRadius: 10,spreadRadius: 1)]),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text('50Cm',style: TextStyle(fontSize: 22,fontWeight: FontWeight.w700),),
+                        const SizedBox(height: 4,),
+                        const Text('Length',style: TextStyle(fontSize: 16,fontWeight: FontWeight.w400),),
+                        const SizedBox(height: 10,),
+                        Image.asset(Assets.chart1)
+                        
+                      ],
+                    ),
                   ),
                 ),
+const SizedBox(width: 10,),
+                Expanded(
+                  child: Container(padding: const EdgeInsets.all(18),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(20),boxShadow:[const BoxShadow(color: Colors.grey,blurRadius: 10,spreadRadius: 1)]),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text('20kg',style: TextStyle(fontSize: 22,fontWeight: FontWeight.w700),),
+                        const SizedBox(height: 4,),
+                        const Text('Weight',style: TextStyle(fontSize: 16,fontWeight: FontWeight.w400),),
+                        const SizedBox(height: 10,),
+                        Image.asset(Assets.chart2)
 
-                Container(padding: EdgeInsets.all(18),
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(20),boxShadow:[BoxShadow(color: Colors.grey,blurRadius: 10,spreadRadius: 1)]),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('20kg',style: TextStyle(fontSize: 22,fontWeight: FontWeight.w700),),
-                      SizedBox(height: 4,),
-                      Text('Weight',style: TextStyle(fontSize: 16,fontWeight: FontWeight.w400),),
-                      SizedBox(height: 10,),
-                      Image.asset(Assets.chart2)
-
-                    ],
+                      ],
+                    ),
                   ),
                 ),
+                const SizedBox(width: 10,),
              //    Container(color: Colors.indigo,
              //      height: 170,
              //      child: SfCartesianChart(
