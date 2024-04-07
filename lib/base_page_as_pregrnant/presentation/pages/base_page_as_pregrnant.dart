@@ -49,8 +49,8 @@ class _BasePageAsPregrnantState extends State<BasePageAsPregrnant> {
     return Scaffold(
       body: IndexedStack(index: pageIndex, children: const [
         HomeScreenAsPregnant(),
-        Vaccinations(),
         ModernParenting(),
+        Vaccinations(),
         ProfileScreen(),
       ]),
       bottomNavigationBar: BottomAppBar(

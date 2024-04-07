@@ -25,10 +25,11 @@ class _HeaderHomeScreenState extends State<HeaderHomeScreen> {
   }
 
   Random random = new Random();
-  int selectIndex=2;
+  int selectIndex = 2;
+
   @override
   Widget build(BuildContext context) {
-   var size=MediaQuery.of(context).size;
+    var size = MediaQuery.of(context).size;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 44.0),
       child: Column(
@@ -60,39 +61,52 @@ class _HeaderHomeScreenState extends State<HeaderHomeScreen> {
           //     });
           //   },
           // ),
-          SizedBox(height: 51,
+          SizedBox(
+            height: size.height*0.1,
             child: ListView.separated(
               scrollDirection: Axis.horizontal,
-                itemBuilder: (context, index) {
-                  return  Column(
-                    children: [
-                       Text(
-                        'week',
-                        style: TextStyle(
-                          fontSize: selectIndex==index?18:16,
-                          fontWeight: selectIndex==index?FontWeight.w400:FontWeight.w800,
-                          color:selectIndex==index? ColorsApp.textColor:ColorsApp.textColor.withOpacity(0.2),
-                        ),
+              itemBuilder: (context, index) {
+                return Column(
+                  children: [
+                    Text(
+                      'week',
+                      style: TextStyle(
+                        fontSize: selectIndex == index ? 18 : 16,
+                        fontWeight: selectIndex == index
+                            ? FontWeight.w400
+                            : FontWeight.w800,
+                        color: selectIndex == index
+                            ? ColorsApp.textColor
+                            : ColorsApp.textColor.withOpacity(0.2),
                       ),
-                      SizedBox(height: 7,),
-                      Text(
-                        '${index+1}',
-                        style:  TextStyle(
-                          fontSize: selectIndex==index?18:16,
-                          fontWeight: selectIndex==index?FontWeight.w400:FontWeight.w800,
-                          color: selectIndex==index? ColorsApp.textColor:ColorsApp.textColor.withOpacity(0.2),
-                        ),
-                      ),
-
-                    ],
-                  );
-                },
-                separatorBuilder: (context, index) => const SizedBox(
-                      width: 34,
                     ),
-                itemCount: 10),
+                    SizedBox(
+                      height: 7,
+                    ),
+                    Text(
+                      '${index + 1}',
+                      style: TextStyle(
+                        fontSize: selectIndex == index ? 18 : 16,
+                        fontWeight: selectIndex == index
+                            ? FontWeight.w400
+                            : FontWeight.w800,
+                        color: selectIndex == index
+                            ? ColorsApp.textColor
+                            : ColorsApp.textColor.withOpacity(0.2),
+                      ),
+                    ),
+                  ],
+                );
+              },
+              separatorBuilder: (context, index) => const SizedBox(
+                width: 34,
+              ),
+              itemCount: 10,
+            ),
           ),
-          SizedBox(height: 50,),
+          SizedBox(
+            height: 50,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -107,9 +121,9 @@ class _HeaderHomeScreenState extends State<HeaderHomeScreen> {
                   Stack(
                     alignment: Alignment.center,
                     children: [
-                       SizedBox(
-                        height: size.width*.35,
-                        width: size.width*.35,
+                      SizedBox(
+                        height: size.width * .35,
+                        width: size.width * .35,
                         child: const CircularProgressIndicator(
                           value: .7,
                           backgroundColor: ColorsApp.white,
@@ -119,8 +133,8 @@ class _HeaderHomeScreenState extends State<HeaderHomeScreen> {
                       ),
                       Image.asset(
                         Assets.babyImage,
-                        height: size.width*.25,
-                        width: size.width*.25,
+                        height: size.width * .25,
+                        width: size.width * .25,
                       ),
                     ],
                   ),
