@@ -120,6 +120,5 @@ class _BasePageAsPregrnantState extends State<BasePageAsPregrnant> {
         ),
       ),
     );
-    ;
   }
 }

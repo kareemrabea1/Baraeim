@@ -48,7 +48,7 @@ class _ModernParentingState extends State<ModernParenting> {
         // scrolled underneath the app bar.
        // scrolledUnderElevation: 4.0,
        // shadowColor:Color(0xFFF687B3),
-        bottom:  TabBar(
+        bottom:  const TabBar(
           labelColor: Color(0xFFF687B3) ,
          indicatorColor: Color(0xFFF687B3),
 
@@ -84,6 +84,7 @@ class _ModernParentingState extends State<ModernParenting> {
 
                 ]
                 ),
+              const SizedBox(height: 10,),
               const Text('Pregnancy yoga',
                 style: TextStyle(
                   color: Colors.black,

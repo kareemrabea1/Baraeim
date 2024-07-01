@@ -5,9 +5,16 @@ import 'package:get/get.dart';
 
 import '../../../assets.dart';
 
-class PregnantDialog extends StatelessWidget {
+bool isShown = false;
+
+class PregnantDialog extends StatefulWidget {
   const PregnantDialog({super.key});
 
+  @override
+  State<PregnantDialog> createState() => _PregnantDialogState();
+}
+
+class _PregnantDialogState extends State<PregnantDialog> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
@@ -26,7 +33,6 @@ class PregnantDialog extends StatelessWidget {
             height: 134,
             width: 134,
           ),
-
           const Text(
             'To know your child’s health condition, complete all the steps to get the best result.',
             style: TextStyle(
@@ -36,13 +42,19 @@ class PregnantDialog extends StatelessWidget {
                 color: ColorsApp.textColor),
             textAlign: TextAlign.center,
           ),
-
           Row(
             children: [
               Expanded(
                 child: InkWell(
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => const GrowthTestPage(),));
+                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const GrowthTestPage(),
+                        ));
+                    isShown = true;
+                    setState(() {});
                   },
                   child: Container(
                     alignment: Alignment.center,
@@ -63,21 +75,24 @@ class PregnantDialog extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(width: 20,),
+              const SizedBox(
+                width: 20,
+              ),
               Expanded(
                 child: InkWell(
                   onTap: () {
                     Navigator.pop(context);
+                    isShown = false;
+                    setState(() {});
                   },
                   child: Container(
                     alignment: Alignment.center,
                     height: 25,
                     width: 120,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      color: ColorsApp.white,
-                      border: Border.all(color:ColorsApp.primary )
-                    ),
+                        borderRadius: BorderRadius.circular(8),
+                        color: ColorsApp.white,
+                        border: Border.all(color: ColorsApp.primary)),
                     child: const Text(
                       'Cancel',
                       style: TextStyle(
