@@ -12,7 +12,7 @@ class ChooseRegister extends StatefulWidget {
 class _ChooseRegisterState extends State<ChooseRegister> {
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       body: Padding(
         padding: const EdgeInsets.only(top: 80, left: 34, right: 34),
         child: Column(
@@ -50,30 +50,30 @@ class _ChooseRegisterState extends State<ChooseRegister> {
                 ),
               ],
             ),
-            const SizedBox(height: 51,),
-            Center(
-              child: Image.asset(
-                height:238 ,
-                  width: 184,
-                  'assets/logo1.png'),
+            const SizedBox(
+              height: 51,
             ),
-            const SizedBox(height: 12,),
+            Center(
+              child: Image.asset(height: 238, width: 184, 'assets/logo1.png'),
+            ),
+            const SizedBox(
+              height: 12,
+            ),
             ElevatedButton(
-              style:ElevatedButton.styleFrom(
-                fixedSize:const Size(300,20),
+              style: ElevatedButton.styleFrom(
+                fixedSize: const Size(300, 20),
                 backgroundColor: const Color(0xFFF687B3),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(14.0),
                 ),
-
               ),
               onPressed: () {
                 Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const RegisterAsMother()));
-
-
+                    MaterialPageRoute(
+                        builder: (context) => const RegisterAsPregrnant()));
               },
+
               child:
               Padding(
                 padding: const EdgeInsets.only(top: 14.0),
@@ -82,28 +82,32 @@ class _ChooseRegisterState extends State<ChooseRegister> {
                   fontFamily: 'Poppins',
                   fontWeight: FontWeight.w600,
                   height: 0.09,
+                  letterSpacing: 0.12,
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 12,
                   letterSpacing: 0.12,),),
               ),
 
             ),
-            const SizedBox(height: 12,),
             ElevatedButton(
-
-              style:ElevatedButton.styleFrom(
-                fixedSize:const Size(300,20),
-                side:(const BorderSide(color: Color(0xFFF687B3))),
+              style: ElevatedButton.styleFrom(
+                fixedSize: const Size(300, 20),
+                side: (const BorderSide(color: Color(0xFFF687B3))),
                 backgroundColor: const Color(0xFFFFFFFF),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(14.0),
                 ),
-
               ),
               onPressed: () {
                 Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const RegisterAsPregrnant()));
-
+                    MaterialPageRoute(
+                        builder: (context) => const RegisterAsMother()));
               },
+
               child:
               Padding(
                 padding: const EdgeInsets.only(top: 14.0),
@@ -112,6 +116,9 @@ class _ChooseRegisterState extends State<ChooseRegister> {
                   fontFamily: 'Poppins',
                   fontWeight: FontWeight.w600,
                   height: 0.09,
+                  letterSpacing: 0.12,
+                ),
+              ),
                   letterSpacing: 0.12,),),
               ),
 

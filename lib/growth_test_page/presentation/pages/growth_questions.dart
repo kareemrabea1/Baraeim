@@ -59,9 +59,16 @@ class GrowthQuestions extends StatelessWidget {
             ),
             const SizedBox(height: 20,),
             InkWell(onTap: () {
+              int sum=0;
+              for(int i=0;i<QuestionModel.questions.length-2;i++){
+                if (QuestionModel.questions[i].answer!=null) {
+                  sum=sum+QuestionModel.questions[i].answer!;
+                }
+              }
               // SendQuestionAnswer.getHealthyDietData(id: 0);
+              print('abdo $sum');
               print(QuestionModel.questions[5].answer);
-              Navigator.push(context, MaterialPageRoute(builder: (context) =>   GrowthTestResult(hasDisease:QuestionModel.questions[5].answer==1)));
+              Navigator.push(context, MaterialPageRoute(builder: (context) =>   GrowthTestResult(hasDisease:sum>=6)));
 
 
             },

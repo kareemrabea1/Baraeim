@@ -37,7 +37,7 @@ class CardMedicine extends StatelessWidget {
           children: [
             Expanded(
               flex: 4,
-              child: Image.asset(
+              child: Image.network(
                 medicine.image ?? '',
                 fit: BoxFit.cover,
                 width: double.infinity,

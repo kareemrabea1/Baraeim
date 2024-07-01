@@ -17,17 +17,19 @@ class MedicinesScreen extends StatefulWidget {
 List<AllMedicineModel> medicineDetails = [
   AllMedicineModel(
     id: 1,
-    image: Assets.medicine,
+    image:
+        'https://cdn.altibbi.com/cdn/cache/large/image/2021/08/30/116fc7c6b0f2daa39b0841a83f0a9499.webp',
     title:
-        'Pregnancy Yoga helps alleviate the effect of common symptoms such as morning sickness, painful leg cramps, swollen ankles, and constipation. Pregnancy Yoga helps alleviate the effect of common symptoms such as morning sickness, painful leg cramps, swollen ankles, and constipation. Pregnancy Yoga helps alleviate the effect of common symptoms such as morning sickness, painful leg cramps, swollen ankles, and constipation.Pregnancy Yoga helps alleviate the effect of common symptoms such as morning sickness, painful leg cramps, swollen ankles, and constipation. Pregnancy Yoga helps alleviate the effect of common symptoms such as morning sickness, painful leg cramps, swollen ankles, and constipation. Pregnancy Yoga helps alleviate the effect of common symptoms such as morning sickness, painful leg cramps, swollen ankles, and constipation.',
-    name: 'Viparita Karani',
+        'دواء هاي دي للحامليعد دواءHi Dee مناسب للمرأة في فترات الحمل والاستعداد للحمل، كونه يمدها باحتياجها من فيتامين د3، يحدد الطبيب الجرعة اللازمة تبعاً لشهور الحمل وحالة كل امرأة:اقرا المزيد من خلال موقع الطبي',
+    name: 'Hi Dee',
   ),
   AllMedicineModel(
     id: 2,
-    image: Assets.medicine2,
+    image:
+        'https://cdn.chefaa.com/filters:format(webp)/fit-in/718x718/public/uploads/products/1615288987%D8%A8%D8%B1%D9%8A%D8%AC%D9%86%D8%A7%D9%83%D9%8A%D8%B1-%D8%A3%D9%82%D8%B1%D8%A7%D8%B5png',
     title:
-        'Pregnancy Yoga helps alleviate the effect of common symptoms such as morning sickness, painful leg cramps, swollen ankles, and constipation. Pregnancy Yoga helps alleviate the effect of common symptoms such as morning sickness, painful leg cramps, swollen ankles, and constipation. Pregnancy Yoga helps alleviate the effect of common symptoms such as morning sickness, painful leg cramps, swollen ankles, and constipation.Pregnancy Yoga helps alleviate the effect of common symptoms such as morning sickness, painful leg cramps, swollen ankles, and constipation. Pregnancy Yoga helps alleviate the effect of common symptoms such as morning sickness, painful leg cramps, swollen ankles, and constipation. Pregnancy Yoga helps alleviate the effect of common symptoms such as morning sickness, painful leg cramps, swollen ankles, and constipation.',
-    name: 'Viparita Karani',
+        'يحتوي على 19 فيتامين ومعادن مهمة مثل فيتامين ب 12 وحمض الفوليك ، مزيج آمن ومتوازن متوافق مع الحمل. لحماية طفلك الذي ينمو ، يتجنب بريجناكير المستويات الزائدة من الحديد والمواد المغذية الأخرى.لا يحتوي بريجناكير على فيتامين أ ، حيث لا ينصح بتناول مستويات عالية منه أثناء الحمل. مناسب للنباتيين.   لم تختبر على الحيوانات.بدون ملح مضاف يتم تناوله مع كمية كافية من الماء بعد الوجبة الرئيسية.',
+    name: 'Pregnacare vitamin ',
   )
 ];
 
