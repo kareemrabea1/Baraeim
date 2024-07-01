@@ -133,12 +133,15 @@ class _LoginState extends State<Login> {
 
                   },
                   child:
-                  const Text('Sign in',style: TextStyle(color: Colors.white,
-                    fontSize: 16,
-                    fontFamily: 'Poppins',
-                    fontWeight: FontWeight.w600,
-                    height: 0.09,
-                    letterSpacing: 0.12,),),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 14.0),
+                    child: const Text('Sign in',style: TextStyle(color: Colors.white,
+                      fontSize: 16,
+                      fontFamily: 'Poppins',
+                      fontWeight: FontWeight.w600,
+                      height: 0.09,
+                      letterSpacing: 0.12,),),
+                  ),
 
                 ),
 

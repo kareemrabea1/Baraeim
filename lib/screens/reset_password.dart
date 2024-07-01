@@ -1,3 +1,4 @@
+import 'package:baraeim/screens/login.dart';
 import 'package:flutter/material.dart';
 
 class ResetPassword extends StatefulWidget {
@@ -11,7 +12,10 @@ class _ResetPasswordState extends State<ResetPassword> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        foregroundColor: Colors.black,
+      ),
       body: Padding(
         padding: const EdgeInsets.only(top:31,left: 24,right: 24),
         child: ListView(
@@ -82,15 +86,21 @@ class _ResetPasswordState extends State<ResetPassword> {
 
                   ),
                   onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const Login()));
 
                   },
                   child:
-                  const Text('Continue',style: TextStyle(color: Colors.white,
-                    fontSize: 16,
-                    fontFamily: 'Poppins',
-                    fontWeight: FontWeight.w600,
-                    height: 0.09,
-                    letterSpacing: 0.12,),),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 14.0),
+                    child: const Text('Continue',style: TextStyle(color: Colors.white,
+                      fontSize: 16,
+                      fontFamily: 'Poppins',
+                      fontWeight: FontWeight.w600,
+                      height: 0.09,
+                      letterSpacing: 0.12,),),
+                  ),
 
 
                 ),

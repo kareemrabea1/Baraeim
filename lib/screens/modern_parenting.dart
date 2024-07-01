@@ -19,6 +19,7 @@ class _ModernParentingState extends State<ModernParenting> {
         length: tabsCount,
       child:  Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.white,
         title: const Padding(
           padding: EdgeInsets.only(left: 64,
             right: 60,
@@ -28,7 +29,7 @@ class _ModernParentingState extends State<ModernParenting> {
         leading:Padding(
           padding: const EdgeInsets.only(left: 36, right: 4, top: 20, bottom: 20),
           child: IconButton(
-            icon: const Icon(Icons.arrow_back),
+            icon: const Icon(Icons.arrow_back,color: Colors.black,),
             onPressed: () {Navigator.pop(context);},
           ),
         ),

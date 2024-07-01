@@ -45,6 +45,7 @@ pertussis)-2nd Dose""", date: '04-Jan-2024'),
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar:AppBar(
+        backgroundColor: Colors.white,
         title: const Padding(
           padding: EdgeInsets.only(left: 64,
             right: 64,
@@ -54,7 +55,7 @@ pertussis)-2nd Dose""", date: '04-Jan-2024'),
         leading:Padding(
           padding: const EdgeInsets.only(left: 36, right: 4, top: 20, bottom: 20),
           child: IconButton(
-            icon: const Icon(Icons.arrow_back),
+            icon: const Icon(Icons.arrow_back,color: Colors.black,),
             onPressed: () {Navigator.pop(context);},
           ),
         ),

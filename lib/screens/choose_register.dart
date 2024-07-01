@@ -73,10 +73,11 @@ class _ChooseRegisterState extends State<ChooseRegister> {
                     MaterialPageRoute(
                         builder: (context) => const RegisterAsPregrnant()));
               },
-              child: const Text(
-                'Register as mother',
-                style: TextStyle(
-                  color: Colors.white,
+
+              child:
+              Padding(
+                padding: const EdgeInsets.only(top: 14.0),
+                child: const Text('Register as mother',style: TextStyle(color: Colors.white,
                   fontSize: 16,
                   fontFamily: 'Poppins',
                   fontWeight: FontWeight.w600,
@@ -87,6 +88,9 @@ class _ChooseRegisterState extends State<ChooseRegister> {
             ),
             const SizedBox(
               height: 12,
+                  letterSpacing: 0.12,),),
+              ),
+
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
@@ -103,10 +107,11 @@ class _ChooseRegisterState extends State<ChooseRegister> {
                     MaterialPageRoute(
                         builder: (context) => const RegisterAsMother()));
               },
-              child: const Text(
-                'Register as pregrnant',
-                style: TextStyle(
-                  color: Color(0xFFF687B3),
+
+              child:
+              Padding(
+                padding: const EdgeInsets.only(top: 14.0),
+                child: const Text('Register as pregrnant',style: TextStyle(color: Color(0xFFF687B3),
                   fontSize: 16,
                   fontFamily: 'Poppins',
                   fontWeight: FontWeight.w600,
@@ -114,6 +119,9 @@ class _ChooseRegisterState extends State<ChooseRegister> {
                   letterSpacing: 0.12,
                 ),
               ),
+                  letterSpacing: 0.12,),),
+              ),
+
             ),
           ],
         ),
