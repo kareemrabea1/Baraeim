@@ -1,4 +1,5 @@
 import 'package:baraeim/base_page/presentation/pages/base_page.dart';
+import 'package:baraeim/growth_test_page/presentation/pages/growth_test_result.dart';
 
 import 'package:baraeim/screens/Register_as_mother.dart';
 import 'package:baraeim/screens/Register_as_pregrnant.dart';
@@ -42,6 +43,7 @@ class MyApp extends StatelessWidget {
       ),
       // home:  const BasePage(),
 
+      // home:GrowthTestResult(hasDisease: true),
       home:Un_splach(),
 
     );

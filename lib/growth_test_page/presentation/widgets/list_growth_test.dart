@@ -1,3 +1,4 @@
+import 'package:baraeim/growth_test_page/presentation/pages/growth_questions.dart';
 import 'package:flutter/material.dart';
 
 import '../../../colors_app.dart';
@@ -25,11 +26,15 @@ class ListGrowthTest extends StatelessWidget {
           ListView.separated(
             itemBuilder: (context, index) {
               return CardGrowthTest(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const GrowthQuestions(),));
+
+                },
                   number: index + 1, test: 'Autism Test');
             },
             separatorBuilder: (context, index) =>
             const SizedBox(height: 14),
-            itemCount: 10,
+            itemCount: 1,
             physics: const NeverScrollableScrollPhysics(),
             shrinkWrap: true,
           ),

@@ -4,6 +4,7 @@ import 'package:baraeim/assets.dart';
 import 'package:baraeim/home_page/data/models/sevices_model.dart';
 import 'package:baraeim/home_page/presentation/widgets/header_home_screen.dart';
 import 'package:baraeim/home_page/presentation/widgets/pregrnant_dialog.dart';
+import 'package:baraeim/listhome_for_artical.dart';
 import 'package:flutter/material.dart';
 
 import '../../../colors_app.dart';
@@ -161,27 +162,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: 12,
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24.0),
-                child: Column(
-                  children: [
-                    Image.asset(
-                      Assets.image,
-                      height: 160,
-                      width: double.infinity,
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    const Text(
-                      'Avoid unsafe activities that carry a high risk of falling or that may cause trauma to your abdomen',
-                      style: TextStyle(
-                        fontSize: 13,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    )
-                  ],
+                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                child: ListHomeForArtical(
+                  list: ContantModel.listArticles,
+                  isScroll: true,
                 ),
-              )
+              ),
             ],
           ),
         ],

@@ -52,5 +52,6 @@ class Assets{
   static const String chart2 = 'assets/Single-small-01.png';
   static const String saladImage = 'assets/saladImage.png';
   static const String medicine2 = 'assets/medicine2.png';
+  static const String babyGirl = 'assets/baby girl.png';
 
 }

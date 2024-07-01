@@ -17,6 +17,7 @@ class HomeScreenAsPregnant extends StatefulWidget {
 
 class _HomeScreenAsPregnantState extends State<HomeScreenAsPregnant> {
   List<ChartData> data = [];
+  late Timer timer;
 
   @override
   void initState() {
@@ -32,15 +33,27 @@ class _HomeScreenAsPregnantState extends State<HomeScreenAsPregnant> {
     // Future.delayed(Duration(seconds: 10),() {
     //
     // },);
-    Timer.periodic(const Duration(minutes: 20), (timer) {
-      showDialog(
-        context: context,
-        builder: (context) {
-          return const PregnantDialog();
-        },
-      );
+    timer = Timer.periodic(const Duration(seconds: 10), (timer) {
+      print('is shown $isShown');
+
+      if (!isShown) {
+        isShown = true;
+        setState(() {});
+        showDialog(
+          context: context,
+          builder: (context) {
+            return const PregnantDialog();
+          },
+        );
+      }
     });
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    timer.cancel();
+    super.dispose();
   }
 
   @override
@@ -78,7 +91,6 @@ class _HomeScreenAsPregnantState extends State<HomeScreenAsPregnant> {
                                   style: TextStyle(
                                     fontSize: 16,
                                     fontWeight: FontWeight.w400,
-
                                   ),
                                 ),
                               ),
@@ -163,82 +175,125 @@ class _HomeScreenAsPregnantState extends State<HomeScreenAsPregnant> {
             const SizedBox(
               height: 12,
             ),
-            Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                const SizedBox(width: 10,),
+                const SizedBox(
+                  width: 10,
+                ),
                 Expanded(
-                  child: Container(padding: const EdgeInsets.all(18),
+                  child: Container(
+                    padding: const EdgeInsets.all(18),
                     decoration: BoxDecoration(
                         color: Colors.white,
-                        borderRadius: BorderRadius.circular(20),boxShadow:[const BoxShadow(color: Colors.grey,blurRadius: 10,spreadRadius: 1)]),
+                        borderRadius: BorderRadius.circular(20),
+                        boxShadow: [
+                          const BoxShadow(
+                              color: Colors.grey,
+                              blurRadius: 10,
+                              spreadRadius: 1)
+                        ]),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text('50Cm',style: TextStyle(fontSize: 22,fontWeight: FontWeight.w700),),
-                        const SizedBox(height: 4,),
-                        const Text('Length',style: TextStyle(fontSize: 16,fontWeight: FontWeight.w400),),
-                        const SizedBox(height: 10,),
+                        const Text(
+                          '50Cm',
+                          style: TextStyle(
+                              fontSize: 22, fontWeight: FontWeight.w700),
+                        ),
+                        const SizedBox(
+                          height: 4,
+                        ),
+                        const Text(
+                          'Length',
+                          style: TextStyle(
+                              fontSize: 16, fontWeight: FontWeight.w400),
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
                         Image.asset(Assets.chart1)
-                        
                       ],
                     ),
                   ),
                 ),
-const SizedBox(width: 10,),
+                const SizedBox(
+                  width: 10,
+                ),
                 Expanded(
-                  child: Container(padding: const EdgeInsets.all(18),
+                  child: Container(
+                    padding: const EdgeInsets.all(18),
                     decoration: BoxDecoration(
                         color: Colors.white,
-                        borderRadius: BorderRadius.circular(20),boxShadow:[const BoxShadow(color: Colors.grey,blurRadius: 10,spreadRadius: 1)]),
+                        borderRadius: BorderRadius.circular(20),
+                        boxShadow: [
+                          const BoxShadow(
+                              color: Colors.grey,
+                              blurRadius: 10,
+                              spreadRadius: 1)
+                        ]),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text('20kg',style: TextStyle(fontSize: 22,fontWeight: FontWeight.w700),),
-                        const SizedBox(height: 4,),
-                        const Text('Weight',style: TextStyle(fontSize: 16,fontWeight: FontWeight.w400),),
-                        const SizedBox(height: 10,),
+                        const Text(
+                          '20kg',
+                          style: TextStyle(
+                              fontSize: 22, fontWeight: FontWeight.w700),
+                        ),
+                        const SizedBox(
+                          height: 4,
+                        ),
+                        const Text(
+                          'Weight',
+                          style: TextStyle(
+                              fontSize: 16, fontWeight: FontWeight.w400),
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
                         Image.asset(Assets.chart2)
-
                       ],
                     ),
                   ),
                 ),
-                const SizedBox(width: 10,),
-             //    Container(color: Colors.indigo,
-             //      height: 170,
-             //      child: SfCartesianChart(
-             //        margin: EdgeInsets.all(10),
-             //        borderWidth: 0,
-             //        backgroundColor: Colors.transparent,
-             //        plotAreaBorderWidth: 0,
-             //        plotAreaBorderColor: Colors.transparent,
-             //        primaryXAxis: NumericAxis(
-             //          minimum: 17,
-             //          maximum: 100,
-             //          isVisible: false,
-             //          interval: 1,
-             //          borderColor: Colors.transparent,
-             //          borderWidth: 0,
-             //        ),
-             //        primaryYAxis: NumericAxis(
-             //          minimum: 0,
-             //          maximum: 8,
-             //          isVisible: false,
-             //          interval: 100,
-             //          borderColor: Colors.transparent,
-             //          borderWidth: 0,
-             //        ),
-             //        series: <ChartSeries<ChartData, int>>[
-             //          SplineAreaSeries(
-             //            dataSource: data,
-             //            xValueMapper: (datum, index) => datum.day,
-             //            yValueMapper: (datum, index) => datum.value,
-             //            gradient: LinearGradient(colors: [Colors.red,Colors.red]),
-             //
-             //          )
-             //        ],
-             //      ),
-             //    ),
+                const SizedBox(
+                  width: 10,
+                ),
+                //    Container(color: Colors.indigo,
+                //      height: 170,
+                //      child: SfCartesianChart(
+                //        margin: EdgeInsets.all(10),
+                //        borderWidth: 0,
+                //        backgroundColor: Colors.transparent,
+                //        plotAreaBorderWidth: 0,
+                //        plotAreaBorderColor: Colors.transparent,
+                //        primaryXAxis: NumericAxis(
+                //          minimum: 17,
+                //          maximum: 100,
+                //          isVisible: false,
+                //          interval: 1,
+                //          borderColor: Colors.transparent,
+                //          borderWidth: 0,
+                //        ),
+                //        primaryYAxis: NumericAxis(
+                //          minimum: 0,
+                //          maximum: 8,
+                //          isVisible: false,
+                //          interval: 100,
+                //          borderColor: Colors.transparent,
+                //          borderWidth: 0,
+                //        ),
+                //        series: <ChartSeries<ChartData, int>>[
+                //          SplineAreaSeries(
+                //            dataSource: data,
+                //            xValueMapper: (datum, index) => datum.day,
+                //            yValueMapper: (datum, index) => datum.value,
+                //            gradient: LinearGradient(colors: [Colors.red,Colors.red]),
+                //
+                //          )
+                //        ],
+                //      ),
+                //    ),
               ],
             ),
             const SizedBox(
@@ -251,45 +306,49 @@ const SizedBox(width: 10,),
             const SizedBox(
               height: 12,
             ),
-            ListView.separated(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                itemBuilder: (context, index) {
-                  return Column(
-                    children: [
-                      Container(
-                        height: 211,
-                        width: double.infinity,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          image: DecorationImage(
-                            image: AssetImage(
-                              ContantModel.listBaby[index].image,
-                            ),
-                          ),
-                        ),
-                        child: ContantModel.listBaby[index].isVideo
-                            ? Image.asset(Assets.videoImage)
-                            : const SizedBox.shrink(),
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        ContantModel.listBaby[index].text,
-                        style: const TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w700,
-                          color: ColorsApp.black,
-                        ),
-                      )
-                    ],
-                  );
-                },
-                separatorBuilder: (context, index) => const SizedBox(
-                      height: 10,
-                    ),
-                itemCount: ContantModel.listBaby.length),
+            ListHomeForArtical(
+              list: ContantModel.listModernparenting,
+              isScroll: true,
+            ),
+            // ListView.separated(
+            //     shrinkWrap: true,
+            //     physics: const NeverScrollableScrollPhysics(),
+            //     itemBuilder: (context, index) {
+            //       return Column(
+            //         children: [
+            //           Container(
+            //             height: 211,
+            //             width: double.infinity,
+            //             decoration: BoxDecoration(
+            //               borderRadius: BorderRadius.circular(20),
+            //               image: DecorationImage(
+            //                 image: AssetImage(
+            //                   ContantModel.listBaby[index].image,
+            //                 ),
+            //               ),
+            //             ),
+            //             child: ContantModel.listBaby[index].isVideo
+            //                 ? Image.asset(Assets.videoImage)
+            //                 : const SizedBox.shrink(),
+            //           ),
+            //           const SizedBox(
+            //             height: 10,
+            //           ),
+            //           Text(
+            //             ContantModel.listBaby[index].text,
+            //             style: const TextStyle(
+            //               fontSize: 14,
+            //               fontWeight: FontWeight.w700,
+            //               color: ColorsApp.black,
+            //             ),
+            //           )
+            //         ],
+            //       );
+            //     },
+            //     separatorBuilder: (context, index) => const SizedBox(
+            //           height: 10,
+            //         ),
+            //     itemCount: ContantModel.listBaby.length),
           ],
         ),
       ),
